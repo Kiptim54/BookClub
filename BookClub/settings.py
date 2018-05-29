@@ -75,9 +75,9 @@ WSGI_APPLICATION = 'BookClub.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.posgresql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'bookclub',
-        'USER':' kiptim',
+        'USER': 'kiptim',
         'PASSWORD':'jerotich',
 
     }
