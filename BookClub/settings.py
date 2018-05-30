@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bookclubapp'
 ]
 
 MIDDLEWARE = [
@@ -117,6 +118,12 @@ USE_L10N = True
 USE_TZ = True
 
 
+BOOK_API_KEY='AIzaSyBq3oH1P0mDfWT5y1tzvnUbZIoUwFzU0ZM'
+
+#possible API endpoints:https://www.googleapis.com/books/v1/volumes?q=chimamanda
+#author:https://www.googleapis.com/books/v1/volumes?q=inauthor:chimamanda&key=AIzaSyBq3oH1P0mDfWT5y1tzvnUbZIoUwFzU0ZM
+#title=https://www.googleapis.com/books/v1/volumes?q=purple&key=AIzaSyBq3oH1P0mDfWT5y1tzvnUbZIoUwFzU0ZM
+#subject=https://www.googleapis.com/books/v1/volumes?q=subject=feminism&key=AIzaSyBq3oH1P0mDfWT5y1tzvnUbZIoUwFzU0ZM
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
