@@ -10,5 +10,3 @@ pytz==2018.4
 six==1.11.0
 wrapt==1.10.11
 
-<h5>{{book.volumeInfo.title}}</h5>
-<img class="img-responsive" src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="{{book.volumeInfo.title}}"

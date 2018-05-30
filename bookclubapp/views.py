@@ -6,10 +6,11 @@ from .request import search_books
 # Create your views here.
 
 def landing_page(request):
+    title="Book Club | Home page"
     book_searched=search_books('chicklit')
     
 
-    return render(request, 'index.html', {"books":book_searched})
+    return render(request, 'api/index.html', {"books":book_searched})
 
 def search_book(request):
     title="Book Results"
@@ -18,4 +19,4 @@ def search_book(request):
         book_searched=search_books(search_term)
         
 
-    return render(request, 'searched_book.html', {"books":book_searched})
+    return render(request, 'api/searched_book.html', {"books":book_searched})
