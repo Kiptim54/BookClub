@@ -1,3 +1,23 @@
-{% for book in books %}
-<h3>{{book.volumeInfo.title}}</h3>
-{% endfor %}
+{%extends 'base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/base.css'%}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for book in books %}
+        <div class="col-md-3">        
+        <h5>{{book.volumeInfo.title}}</h5>
+        <img class="img-responsive" src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="{{book.volumeInfo.title}}"
+        </div>
+    </div>
+    {%endfor %}
+</div>
+</div>
+{% endblock %}
+
+
+

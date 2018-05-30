@@ -1,9 +1,14 @@
+astroid==1.6.4
 Django==2.0
-pkg-resources==0.0.0
+django-bootstrap3==10.0.1
+isort==4.3.4
+lazy-object-proxy==1.3.1
+mccabe==0.6.1
+psycopg2==2.7.4
+pylint==1.9.1
 pytz==2018.4
+six==1.11.0
+wrapt==1.10.11
 
-
-#possible API endpoints:https://www.googleapis.com/books/v1/volumes?q=chimamanda
-#author:https://www.googleapis.com/books/v1/volumes?q=inauthor:chimamanda&key=AIzaSyBq3oH1P0mDfWT5y1tzvnUbZIoUwFzU0ZM
-#title=https://www.googleapis.com/books/v1/volumes?q=purple&key=AIzaSyBq3oH1P0mDfWT5y1tzvnUbZIoUwFzU0ZM
-#subject=https://www.googleapis.com/books/v1/volumes?q=subject=feminism&key=AIzaSyBq3oH1P0mDfWT5y1tzvnUbZIoUwFzU0ZM
+<h5>{{book.volumeInfo.title}}</h5>
+<img class="img-responsive" src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="{{book.volumeInfo.title}}"

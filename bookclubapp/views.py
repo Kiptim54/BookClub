@@ -7,6 +7,6 @@ from .request import search_books
 
 def landing_page(request):
     book_searched=search_books('purple')
-    print(book_searched)
+    
 
     return render(request, 'index.html', {"books":book_searched})

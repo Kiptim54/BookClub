@@ -6,6 +6,7 @@ base_url='https://www.googleapis.com/books/v1/volumes?q={}&key={}'
 
 def search_books(search_item):
     book_results_url=base_url.format(search_item,api_key)
+    print(book_results_url)
 
     with urllib.request.urlopen(book_results_url)as url:
         get_books_data=url.read()
