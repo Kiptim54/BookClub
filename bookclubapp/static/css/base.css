@@ -1,12 +1,9 @@
 img{
     width:200%;
     height:100%;
+    padding:0px;
+    margin:0;
+    margin-left:0;
+    margin-right:0;
     
 }
-*{
-
-}
-/* #booksuggestions{
-    overflow-x: scroll;
-    height:100vh;
-} */
