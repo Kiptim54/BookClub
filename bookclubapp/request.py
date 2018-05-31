@@ -16,7 +16,10 @@ def search_books(search_item):
 
         if get_books_response['items']:
             book_results=get_books_response['items']
+            return book_results
+        else:
+            pass
 
-        return book_results
+      
 
 

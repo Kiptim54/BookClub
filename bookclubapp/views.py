@@ -18,16 +18,19 @@ def books_page(request):
     title="Book Club | Book Suggestions"
     book_searched=search_books('chicklit')
 
-    return render(request, 'api/books.html', {"books":book_searched})
+    return render(request, 'api/books.html', {"books":book_searched, "title":title})
 
 def search_book(request):
     title="Book Results"
-    if 'searchbook' in request.GET and request.GET['searchbook']:
-        search_term=request.GET.get('searchbook')
-        book_searched=search_books(search_term)
-        
+    try:
+        if 'searchbook' in request.GET and request.GET['searchbook']:
+            search_term=request.GET.get('searchbook')
+            book_searched=search_books(search_term)
+        return render(request, 'api/searched_book.html', {"books":book_searched, "title":title})
+    except:
+        error="No results"
 
-    return render(request, 'api/searched_book.html', {"books":book_searched, "title":title})
+    return render(request, 'api/searched_book.html', {"error":error})
 
 def single_review(request, id):
     current_user=request.user

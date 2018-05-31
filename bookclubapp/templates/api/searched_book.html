@@ -8,16 +8,33 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        {% for book in books %}
-        <div class="col-md-3">        
-        <h5>Book:{{book.volumeInfo.title}}</h5>
-         <h5>Author:{{book.volumeInfo.authors}}</h5>
-        <img class="img-responsive" src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="{{book.volumeInfo.title}}"
+        <div class="col-xs-12">
+                {% if books %}
+                <p>Results; {{books | length}}</p>
+                {%else %}
+                <p>No results</p>
+                {%endif %}
         </div>
-    </div>
-    {%endfor %}
-</div>
-</div>
+            </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                        {% if books %}
+                        {% for book in books %}
+                        <div class="col-md-3">        
+                        <h5>Book:{{book.volumeInfo.title}}</h5>
+                         <h5>Author:{{book.volumeInfo.authors}}</h5>
+                        <img class="img-responsive" src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="{{book.volumeInfo.title}}"
+                        </div>
+                    </div>
+                    {%endfor %}
+                    {%endif %}
+                </div>
+            </div>
+      
+      
+
+
 
 
 {% endblock %}
