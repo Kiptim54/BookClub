@@ -35,6 +35,10 @@ def single_review(request, id):
     review=get_object_or_404(Review,id=id)
     comments=Comment.objects.filter(review=review)
     print(review)
+    form=CommentForm()
+    return render(request, 'views/single_review.html',{"review":review, "form":form,"title":title, "comments":comments})
+
+def comment(request):
     if request.method=='POST':
         form=CommentForm(request.POST, request.FILES)
         comment=form.save(commit=False)
@@ -42,9 +46,10 @@ def single_review(request, id):
         comment.review=review
         comment.save()
         form=CommentForm()
-    else:
-        form=CommentForm()
-    return render(request, 'views/single_review.html',{"review":review, "form":form,"title":title, "comments":comments})
+    data = {'success': 'You have commented on this post'}
+    return JsonResponse(data)
+
+
 
 def display_reviews(request):
     title="Book Club | Review"

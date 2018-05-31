@@ -37,7 +37,7 @@ class Books(models.Model):
         return self.title
 
 class Profile(models.Model):
-    user=models.ForeignKey(User, on_delete=models.CASCADE)
+    user=models.OneToOneField(User, on_delete=models.CASCADE)
     name=models.CharField(max_length=250)
     Email=models.EmailField()
     reviews=models.ForeignKey(Review,on_delete=models.CASCADE, null=True)
