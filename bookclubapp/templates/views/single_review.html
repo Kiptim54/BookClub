@@ -1,0 +1,33 @@
+{% extends 'views/base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="#">
+{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>{{review.title}}</h3>
+            <p>{{review.Review}}</p>
+            <h3>Add comment</h3>
+            <form action="{% url 'single_review' review.id %}" method='post'>
+                    {% csrf_token %}
+                {% bootstrap_form form %}
+                <input type="submit">
+                <br>
+                <h5>Comments</h5>
+                <hr>
+                {% for comment in comments %}
+                <p>{{comment.user}}~~{{comment.comment}}</p>
+                <p>{{comment.time_posted}}</p>
+
+                {% endfor %}
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

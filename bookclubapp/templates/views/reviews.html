@@ -1,0 +1,23 @@
+{% extends 'views/base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="#">
+{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            {% for review in reviews %}
+          <a href="{% url 'single_review' id=review.id %}"><h1> Title:{{review.title}}</h1></a>
+           <p>Review: {{review.Review}}</p> 
+
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

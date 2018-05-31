@@ -1,11 +1,22 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class Review(models.Model):
+    title=models.CharField(max_length=250)
+    Review=models.TextField()
+    user=models.ForeignKey(User, on_delete=models.CASCADE)
+    time_posted=models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering=['-time_posted']
+
+    def __str__(self):
+        return self.title
 
 class Comment(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     comment=models.TextField()
+    review=models.ForeignKey(Review, on_delete=models.CASCADE, null=True)
     time_posted=models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -15,18 +26,7 @@ class Comment(models.Model):
         return self.user
 
 
-class Review(models.Model):
-    title=models.CharField(max_length=250)
-    Review=models.TextField()
-    user=models.ForeignKey(User, on_delete=models.CASCADE)
-    comments=models.ForeignKey(Comment, on_delete=models.CASCADE)
-    time_posted=models.DateTimeField(auto_now_add=True)
 
-    class Meta:
-        ordering=['-time_posted']
-
-    def __str__(self):
-        return self.title
         
 class Books(models.Model):
     title=models.CharField(max_length=250)
