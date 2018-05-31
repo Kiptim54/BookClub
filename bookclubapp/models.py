@@ -49,6 +49,7 @@ class Profile(models.Model):
 
 class Groups(models.Model):
     Group_name=models.CharField(max_length=250)
+    Group_owner=models.ForeignKey(User, on_delete=models.CASCADE, related_name='group_owner')
     members=models.ManyToManyField(Profile, null=True)
     books=models.ManyToManyField(Books, null=True)
 

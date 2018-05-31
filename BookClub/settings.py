@@ -130,3 +130,4 @@ BOOK_API_KEY='AIzaSyBq3oH1P0mDfWT5y1tzvnUbZIoUwFzU0ZM'
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL='/'
