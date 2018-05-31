@@ -8,8 +8,11 @@ class Comment(models.Model):
     comment=models.TextField()
     time_posted=models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering=['-time_posted']
+
     def __str__(self):
-        return self.user.username
+        return self.user
 
 
 class Review(models.Model):
@@ -19,13 +22,16 @@ class Review(models.Model):
     comments=models.ForeignKey(Comment, on_delete=models.CASCADE)
     time_posted=models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering=['-time_posted']
+
     def __str__(self):
         return self.title
         
 class Books(models.Model):
     title=models.CharField(max_length=250)
     author=models.CharField(max_length=250)
-    reviews=models.ForeignKey(Review, on_delete=models.CASCADE)
+    reviews=models.ForeignKey(Review, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return self.title
@@ -34,17 +40,17 @@ class Profile(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE)
     name=models.CharField(max_length=250)
     Email=models.EmailField()
-    reviews=models.ForeignKey(Review,on_delete=models.CASCADE)
-    comments=models.ForeignKey(Comment, on_delete=models.CASCADE)
-    books=models.ForeignKey(Books, on_delete=models.CASCADE)
+    reviews=models.ForeignKey(Review,on_delete=models.CASCADE, null=True)
+    comments=models.ForeignKey(Comment, on_delete=models.CASCADE, null=True)
+    books=models.ManyToManyField(Books, null=True)
 
     def __str__(self):
         return self.name
 
 class Groups(models.Model):
     Group_name=models.CharField(max_length=250)
-    members=models.ManyToManyField(Profile)
-    books=models.ForeignKey(Books, on_delete=models.CASCADE)
+    members=models.ManyToManyField(Profile, null=True)
+    books=models.ManyToManyField(Books, null=True)
 
     def __str__(self):
         return self.Group_name
