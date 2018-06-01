@@ -13,14 +13,22 @@
             <h3>{{review.title}}</h3>
             <p>{{review.Review}}</p>
             <h3>Add comment</h3>
-            <form action="{% url 'comment' %}" method='post'>
+            <form id="endpoint-url-div" action="{% url 'comment' review.id %}" method='post'>
                     {% csrf_token %}
-                {% bootstrap_form form %}
+                {%for field in form %}
+                {{field.label_tag}}
+                {%bootstrap_field field %}
+                
                 <input type="submit">
                 <br>
+                </form>
+                {%endfor%}
                 <h5>Comments</h5>
                 <hr>
                 {% for comment in comments %}
+                <div id="comments">
+                  
+                </div>
                 <p>{{comment.user}}~~{{comment.comment}}</p>
                 <p>{{comment.time_posted}}</p>
 
@@ -31,7 +39,6 @@
 </div>
 {% block scripts %}
 {{block.super}}
-<script src="{% static 'js/jquery-3.3.1.js'%}"></script>
 <script type='text/javascript' src='{% static 'js/scripts.js'%}'></script>
 {% endblock %}
 {% endblock %}

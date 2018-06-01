@@ -23,7 +23,7 @@ class Comment(models.Model):
         ordering=['-time_posted']
 
     def __str__(self):
-        return self.user
+        return self.user.username
 
 
 

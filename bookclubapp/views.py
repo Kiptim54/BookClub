@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect,get_list_or_404,get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 from .models import Book
 from .request import search_books
 from .forms import ProfileForm, GroupForm, CommentForm, ReviewForm, BookForm
@@ -41,16 +41,18 @@ def single_review(request, id):
     form=CommentForm()
     return render(request, 'views/single_review.html',{"review":review, "form":form,"title":title, "comments":comments})
 
-def comment(request):
+def comment(request, id):
+    print("hey from comment")
+    current_user=request.user
+    review=get_object_or_404(Review,id=id)
+    comment = request.POST['comment']
     if request.method=='POST':
-        form=CommentForm(request.POST, request.FILES)
-        comment=form.save(commit=False)
-        comment.user=current_user
-        comment.review=review
-        comment.save()
+        saved=Comment.objects.create(comment=comment, user=current_user, review=review)
         form=CommentForm()
-    data = {'success': 'You have commented on this post'}
-    return JsonResponse(data)
+        print("")
+    comments = {'comment': comment}
+    return JsonResponse(comments)
+ 
 
 
 

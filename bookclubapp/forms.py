@@ -17,6 +17,8 @@ class CommentForm(forms.ModelForm):
         model=Comment
         fields=['comment']
 
+        
+
 class ReviewForm(forms.ModelForm):
     class Meta:
         model=Review
