@@ -7,8 +7,9 @@ from .forms import ProfileForm, GroupForm, CommentForm, ReviewForm, BookForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Profile,Books,Comment,Review,Groups
+from .models import Profile,Books,Comment,Review,Groups, Question
 from datetime import datetime
+import random
 
 
 def landing_page(request):
@@ -160,3 +161,9 @@ def sign_up(request):
     return render(request, 'registration/signup.html', {"form":form, "title":title})
 
 
+def get_question(request):
+    questions=Question.objects.all()
+    chosen=random.choice(questions)
+    print(chosen)
+    print(questions)
+    return HttpResponse("")

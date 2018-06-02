@@ -13,5 +13,6 @@ urlpatterns = [
     path('review/<int:id>', views.single_review, name='single_review'),
     path('reviews/', views.display_reviews, name='display_reviews'),
     path('review/ajax/comment/<int:id>', views.comment, name='comment'),
+    path('ajax/questions', views.get_question, name='question'),
 
 ]
