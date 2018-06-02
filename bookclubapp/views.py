@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect,get_list_or_404,get_object_or_404
 from django.http import HttpResponse,JsonResponse
+from django.forms.models import model_to_dict
 from .models import Book
 from .request import search_books
 from .forms import ProfileForm, GroupForm, CommentForm, ReviewForm, BookForm
@@ -7,6 +8,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Profile,Books,Comment,Review,Groups
+from datetime import datetime
 
 
 def landing_page(request):
@@ -33,7 +35,7 @@ def search_book(request):
     return render(request, 'api/searched_book.html', {"error":error})
 
 def single_review(request, id):
-    current_user=request.user
+    current_user=request.user.username
     title="BookClub | Review"
     review=get_object_or_404(Review,id=id)
     comments=Comment.objects.filter(review=review)
@@ -42,16 +44,19 @@ def single_review(request, id):
     return render(request, 'views/single_review.html',{"review":review, "form":form,"title":title, "comments":comments})
 
 def comment(request, id):
-    print("hey from comment")
     current_user=request.user
+    name=current_user.username
+    print(name)
+    date = datetime
+    print(date)
     review=get_object_or_404(Review,id=id)
     comment = request.POST['comment']
     if request.method=='POST':
-        saved=Comment.objects.create(comment=comment, user=current_user, review=review)
-        form=CommentForm()
-        print("")
-    comments = {'comment': comment}
-    return JsonResponse(comments)
+        saved=Comment.objects.create(comment=comment, user=current_user, review=review, time_posted=date)
+        print(saved)
+        print(model_to_dict(saved))
+
+    return JsonResponse(model_to_dict(saved))
  
 
 

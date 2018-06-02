@@ -27,10 +27,10 @@
                 <hr>
                 {% for comment in comments %}
                 <div id="comments">
-                  
+                        <p>{{comment.user}}~~{{comment.comment}}</p>
+                        <p>{{comment.time_posted}}</p>
                 </div>
-                <p>{{comment.user}}~~{{comment.comment}}</p>
-                <p>{{comment.time_posted}}</p>
+                
 
                 {% endfor %}
             
