@@ -166,4 +166,4 @@ def get_question(request):
     chosen=random.choice(questions)
     print(chosen)
     print(questions)
-    return HttpResponse("")
+    return JsonResponse(model_to_dict(chosen), safe=False)
