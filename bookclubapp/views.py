@@ -23,6 +23,8 @@ def books_page(request):
 
     return render(request, 'api/books.html', {"books":book_searched, "title":title})
 
+
+
 def search_book(request):
     title="Book Results"
     try:

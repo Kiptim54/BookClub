@@ -91,7 +91,6 @@ $(document).ready(function(){
         'dataType':'json',
         'success': function(response){
             console.log(response)
-            alert(response.Question)
           $(".questions").text(response.Question)
           $("form")[0].reset()
         },
