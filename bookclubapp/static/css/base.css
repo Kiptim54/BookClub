@@ -1,3 +1,16 @@
+*{
+    font-size:15px;
+    margin:0;
+    margin-right: -9px;
+    
+}
+.container-fluid {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
 img{
     width:200%;
     height:100%;
@@ -6,4 +19,27 @@ img{
     margin-left:0;
     margin-right:0;
     
+}
+
+#books{
+    height:60vh;
+    background:pink;
+    margin:0;
+    
+}
+.nav{
+    background:black;
+}
+nav li{
+    display:inline-block;
+    margin:1%;
+}
+#bodynav{
+    float:right;
+    
+}
+ ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-right: 7em;
 }

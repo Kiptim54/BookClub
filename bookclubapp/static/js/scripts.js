@@ -11,7 +11,7 @@ $(document).ready(function(){
         'dataType':'json',
         'success': function(comment, user){
             console.log(comment)
-            $("#comments").prepend("<p>comment.comment</p>")
+          $("#comments").prepend("comment.comment")
         },
 
     })
