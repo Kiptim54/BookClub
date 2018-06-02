@@ -9,9 +9,9 @@ $(document).ready(function(){
         'type':'POST',
         'data':form.serialize(),
         'dataType':'json',
-        'success': function(comment, user){
+        'success': function(comment){
             console.log(comment)
-          $("#comments").prepend("comment.comment")
+          $("#comments").prepend(comment.comment)
         },
 
     })

@@ -66,6 +66,10 @@ class Book:
         self.description=description
         self.average_rating=average_rating
 
+class Question(models.Model):
+    Question=models.CharField(max_length=500)
 
+    def __str__(self):
+        return self.Question
 
 

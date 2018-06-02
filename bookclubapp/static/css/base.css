@@ -11,6 +11,26 @@
     margin-right: auto;
     margin-left: auto;
 }
+.nav{
+    background:black;
+}
+nav li{
+    display:inline-block;
+    margin:1%;
+    padding:1em;
+}
+#bodynav{
+    float:right;
+    
+}
+.nav a{
+    color:black;
+}
+ ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-right: 7em;
+}
 img{
     width:200%;
     height:100%;
@@ -25,12 +45,17 @@ img{
     height:80vh;
     background:pink;
     margin:0;
+    background-image: url("https://images.pexels.com/photos/34592/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=650&w=940");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
     
 }
 .randoms{
     height:40vh;
     background:yellow;
     margin:0;
+    padding:2em;
 }
 .ideas{
     height:40vh;
@@ -43,21 +68,4 @@ img{
     color:white;
     margin:0;
     padding:2em;
-}
-.nav{
-    background:black;
-}
-nav li{
-    display:inline-block;
-    margin:1%;
-    padding:1em;
-}
-#bodynav{
-    float:right;
-    
-}
- ul {
-    margin-top: 0;
-    margin-bottom: 10px;
-    padding-right: 7em;
 }
