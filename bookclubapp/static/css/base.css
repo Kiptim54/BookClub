@@ -22,10 +22,27 @@ img{
 }
 
 #books{
-    height:60vh;
+    height:80vh;
     background:pink;
     margin:0;
     
+}
+.randoms{
+    height:40vh;
+    background:yellow;
+    margin:0;
+}
+.ideas{
+    height:40vh;
+    background:burlywood;
+    margin:0;
+}
+.footer{
+    height:40vh;
+    background:black;
+    color:white;
+    margin:0;
+    padding:2em;
 }
 .nav{
     background:black;
@@ -33,6 +50,7 @@ img{
 nav li{
     display:inline-block;
     margin:1%;
+    padding:1em;
 }
 #bodynav{
     float:right;
