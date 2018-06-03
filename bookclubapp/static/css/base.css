@@ -89,13 +89,22 @@ img{
     padding-top: 10%;
     width:80%;
     margin-left:65%;
-    border:solid 1px #C0DD79;
-    margin-bottom: 3%;
+    border:solid 4px white;
+    margin-bottom: 5%;
+    margin-top: 10%;
+    color: white;
+    
+
+}
+#about{
+    background:url('https://images.pexels.com/photos/370474/pexels-photo-370474.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-blend-mode: saturation;
+    background-attachment: fixed;
 }
 .footer{
     height:40vh;
-    background:#C0DD79;
-    color:black;
+    background:black;
+    color:white;
     margin:0;
     padding:5em;
     width: 100vw;
