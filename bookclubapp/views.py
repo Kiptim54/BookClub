@@ -48,10 +48,11 @@ def single_review(request, id):
 
 def comment(request, id):
     current_user=request.user
-    name=current_user.username
-    print(name)
     date = datetime
     print(date)
+    profile=Profile.objects.get(user=current_user)
+    name=profile.name
+    print(profile)
     review=get_object_or_404(Review,id=id)
     comment = request.POST['comment']
     if request.method=='POST':
