@@ -2,6 +2,7 @@
     font-size:15px;
     margin:0;
     margin-right: -9px;
+    overflow-x: hidden;
     
 }
 .container-fluid {
@@ -11,8 +12,9 @@
     margin-right: auto;
     margin-left: auto;
 }
-.nav{
+nav{
     background:black;
+    margin-bottom: -10px;
 }
 nav li{
     display:inline-block;
@@ -23,8 +25,8 @@ nav li{
     float:right;
     
 }
-.nav a{
-    color:black;
+nav a{
+    color:white;
 }
  ul {
     margin-top: 0;
@@ -45,10 +47,11 @@ img{
     height:80vh;
     background:pink;
     margin:0;
-    background-image: url("https://images.pexels.com/photos/673648/pexels-photo-673648.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-image: url("https://images.pexels.com/photos/405031/pexels-photo-405031.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
+    width: 100vw;
     
 }
 .randoms{
@@ -56,11 +59,13 @@ img{
     background:yellow;
     margin:0;
     padding:2em;
+    width: 100vw;
 }
 .ideas{
     height:40vh;
     background:burlywood;
     margin:0;
+    width: 100vw;
 }
 .footer{
     height:40vh;
@@ -68,4 +73,8 @@ img{
     color:white;
     margin:0;
     padding:2em;
+    width: 100vw;
+}
+#formbooks{
+    margin-top:4%;
 }
