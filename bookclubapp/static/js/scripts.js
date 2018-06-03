@@ -99,4 +99,31 @@ $(document).ready(function(){
 })
 
 });
+$(document).ready(function(){
+    $("#formbooks").submit(function(event){
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        form = $("form")
+        var url = document.getElementById('formbooks').getAttribute('action');
+    
+    $.ajax({
+        'url':url,
+        'type':'POST',
+        'data':$(this).serialize(),
+        'dataType':'json',
+        'success': function(response){
+            for(i=0; i<10; i++){
+                console.log(JSON.stringify(response))
+                // alert(JSON.stringify(response[i].volumeInfo.title))
+                $(".searched").hide()
+                $(".new").append(` <img style="display:inline-block; height: 50%; width:auto;" class="img-responsive" src=${JSON.stringify(response[i].volumeInfo.imageLinks.smallThumbnail)} alt="here"/>`)
+                $("form")[0].reset()
+           
 
+            }
+        },
+
+    })
+})
+
+});

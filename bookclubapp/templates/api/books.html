@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="{% static 'css/base.css'%}">
 {% endblock %}
 {% block content %}
+
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -18,19 +19,33 @@
 </div>
 <br>
 <div class="container">
+        <div class="row">
+            <div class="col-xs-6 offset-3">
+                <h2>{{error}}</h2>
+            </div>
+        </div>
+    </div>
+<div class="container">
     <div class="row">
+        <div class="new"></div>
+        </div>
+        <div class="searched">
         {% for book in books %}
         <div class="col-md-3">        
         <h5>Book:{{book.volumeInfo.title}}</h5>
          <h5>Author:{{book.volumeInfo.authors}}</h5>
-        <img class="img-responsive" src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="{{book.volumeInfo.title}}"
+        <img class="img-responsive" src="{{book.volumeInfo.imageLinks.smallThumbnail}}" alt="{{book.volumeInfo.title}}">
         </div>
-    </div>
     {%endfor %}
+    </div>
+    </div>
 </div>
 </div>
 
-
+{% block scripts %}
+{{block.super}}
+<script type='text/javascript' src='{% static 'js/scripts.js'%}'></script>
+{% endblock %}
 {% endblock %}
 
 

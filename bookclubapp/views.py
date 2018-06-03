@@ -19,23 +19,28 @@ def landing_page(request):
 
 def books_page(request):
     title="Book Club | Book Suggestions"
-    book_searched=search_books('chicklit')
+    try:
+        book_searched=search_books('chicklit')
+        return render(request, 'api/books.html', {"books":book_searched, "title":title})
+    except:
+        error="Sorry you seem to be having an internet connection problem.Try again"
 
-    return render(request, 'api/books.html', {"books":book_searched, "title":title})
+    return render(request, 'api/books.html', {"title":title, "error":error})
 
 
 
 def search_book(request):
     title="Book Results"
-    try:
-        if 'searchbook' in request.GET and request.GET['searchbook']:
-            search_term=request.GET.get('searchbook')
-            book_searched=search_books(search_term)
-        return render(request, 'api/searched_book.html', {"books":book_searched, "title":title})
-    except:
-        error="No results"
+    # try:
+    search_term = request.GET.get('searchbook')
+    book_searched = search_books(search_term)
 
-    return render(request, 'api/searched_book.html', {"error":error})
+    if 'searchbook' in request.GET and request.GET['searchbook']:
+        search_term=request.GET.get('searchbook')
+        book_searched = search_books(search_term)
+    return JsonResponse(book_searched, safe=False)
+    
+    
 
 def single_review(request, id):
     current_user=request.user.username
