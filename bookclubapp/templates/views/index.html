@@ -11,32 +11,62 @@
     <div class="row">
         <div class="col-md-12,col-lg-12 col-xs-12 text-center">
             <div id="books">
-                <h5>Books carousel goes here</h5>
-                
+                <h1>Brenda's Book Club</h1>
+                <img src="static/photos/book.png" class="img-repsonsive" style="height:50%; width:auto;" alt="commnune logo">
             </div>
-            <div class="randoms">
-                <h5>Click the buttom for a question</h5>
-                
-                <form action="{% url 'question' %}" method="post" id="randomquestions">
-                        {% csrf_token %}
-                    <input type="submit" name="random" id="questions" value="get question">
-                </form>
-                <div class="questions">
-
+            </div>
+            </div>
+            <div class="row">
+                    <div class="col-xs-12 text-center">
+                            <div class="randoms">
+                        
+                                    <h2>Questions for you and your book club members!</h2>
+                                    <h5>Click the button below to give you questions to discuss with your book club</h5>
+                                    <h6>Note: If a question repeats itself click the button again...</h6>
+                                    <br>
+                                    <br>
+                                    
+                                    <form action="{% url 'question' %}" method="post" id="randomquestions">
+                                            {% csrf_token %}
+                                        <input style="font-size:120%" class="btn btn-success"type="submit" name="random" id="questions" value="Get Question">
+                                    </form>
+                                    
+                                    <div class="questions" style="font-size:200%">
+                    
+                                    </div>
+                                    
+                                   
+                                </div>
+                                <hr>
+                    </div>
+            </div>
+           
+           <div class="row">
+                <div class="col-xs-6 ">
+                        <div class="ideas text-center ">
+                                <h2>About us</h2>
+                                <h5>
+                                    <p>Book Club is a Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo saepe praesentium porro totam quibusdam iste facilis. Facilis, labore quo. Veritatis nobis et, tempore libero tenetur est laborum ad hic laudantium!</p>
+                                </h5>
+                            </div>
                 </div>
-                
+           </div>
+          
+            <div class="row">
+                    <div class="col-xs-12">
+                            <div class="footer text-center">
+                                    <h3>Book club &copy;</h3>
+                                    <p>0719-656-398</p>
+                                    <p>kiptim54@gmail.com</p>
+                                </div>
+
+                        </div>
             </div>
-            <div class="ideas">
-                <h2>About us</h2>
-            </div>
-            <div class="footer text-center">
-                <h3>Book club &copy;</h3>
-                <p>0719-656-398</p>
-                <p>kiptim54@gmail.com</p>
-            </div>
+           
+           
         </div>
     </div>
-</div>
+
 {% block scripts %}
 {{block.super}}
 <script type='text/javascript' src='{% static 'js/scripts.js'%}'></script>

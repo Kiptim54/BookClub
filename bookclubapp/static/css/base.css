@@ -1,9 +1,21 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 *{
     font-size:15px;
     margin:0;
-    margin-right: -9px;
-    overflow-x: hidden;
     
+   
+    font-family: 'Raleway', sans-serif;
+    padding:0;
+    margin-left: -3px;
+    margin-right: -2px;
+    
+}
+.row{
+    margin-right: -15px;
+    margin-left: -9px;
 }
 .container-fluid {
     width: 100%;
@@ -13,8 +25,9 @@
     margin-left: auto;
 }
 nav{
-    background:black;
+   
     margin-bottom: -10px;
+    
 }
 nav li{
     display:inline-block;
@@ -25,8 +38,8 @@ nav li{
     float:right;
     
 }
-nav a{
-    color:white;
+nav a, nav a:hover{
+    color:#85aa2c;
 }
  ul {
     margin-top: 0;
@@ -45,34 +58,46 @@ img{
 
 #books{
     height:80vh;
-    background:pink;
     margin:0;
-    background-image: url("https://images.pexels.com/photos/405031/pexels-photo-405031.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-image: url("https://images.pexels.com/photos/733854/pexels-photo-733854.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
+    color:white;
     
+}
+#books h1{
+    font-size: 230%;
+    padding-top:5%;
+
 }
 .randoms{
     height:40vh;
-    background:yellow;
     margin:0;
     padding:2em;
     width: 100vw;
+    margin-bottom:2%;
+    padding:3%;
 }
+
 .ideas{
     height:40vh;
-    background:burlywood;
     margin:0;
     width: 100vw;
+    padding:3%;
+    padding-top: 10%;
+    width:80%;
+    margin-left:65%;
+    border:solid 1px #C0DD79;
+    margin-bottom: 3%;
 }
 .footer{
     height:40vh;
-    background:black;
-    color:white;
+    background:#C0DD79;
+    color:black;
     margin:0;
-    padding:2em;
+    padding:5em;
     width: 100vw;
 }
 #formbooks{

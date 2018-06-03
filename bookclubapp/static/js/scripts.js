@@ -108,15 +108,17 @@ $(document).ready(function(){
     
     $.ajax({
         'url':url,
-        'type':'POST',
+        'type':'GET',
         'data':$(this).serialize(),
         'dataType':'json',
         'success': function(response){
+            $(".new").empty()
             for(i=0; i<10; i++){
                 console.log(JSON.stringify(response))
                 // alert(JSON.stringify(response[i].volumeInfo.title))
+                
                 $(".searched").hide()
-                $(".new").append(` <img style="display:inline-block; height: 50%; width:auto;" class="img-responsive" src=${JSON.stringify(response[i].volumeInfo.imageLinks.smallThumbnail)} alt="here"/>`)
+                $(".new").append(` <img style="display:inline-block; height: 100%; width:auto;" class="img-responsive" src=${JSON.stringify(response[i].volumeInfo.imageLinks.smallThumbnail)} alt="here"/>`)
                 $("form")[0].reset()
            
 
