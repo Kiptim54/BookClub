@@ -7,13 +7,24 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-xs-6 offset-3">
-            <h3>Login</h3>
-            <form method="post">
-                {% csrf_token %}
-                {%bootstrap_form form%}
-                <input type="submit">
-            </form>
+        <div class="col-xs-4 offset-4">
+            <div class="text-center" id="login">
+                <h2>Brenda's Book Club</h2>
+                    <img src="/static/photos/book.png" class="img-repsonsive" style="width: 60%;" alt="commnune logo">
+                    <br>
+                    <br>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        {%bootstrap_form form%}
+                        <input class="btn btn-success" type="submit" style="font-size: 100%;">
+                        <br>
+                        <br>
+                        <p>No account? Sign up <a href="/signup">here</a>
+                            </p>
+                    </form>
+            </div>
+         
         </div>
     </div>
 </div>

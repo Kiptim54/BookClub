@@ -17,6 +17,8 @@ def landing_page(request):
 
     return render(request, 'views/index.html', {"title":title})
 
+
+
 def books_page(request):
     title="Book Club | Book Suggestions"
     try:

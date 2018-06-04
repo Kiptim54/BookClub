@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+      
+              <nav id="greennav">
+                <ul id="nav">
+                  <li id="brand"><a href="{% url 'landing_page'%}">BOOK CLUB</a></li>
+                  <!-- <li id="brand"><a href=""><img src="static/photos/finalcommune.png" class="img-repsonsive navlogo" alt="commnune logo"></a></li> -->
+                  {% if user.is_authenticated %}
+                  <li id="bodynav"><a href="{% url 'logout'%}">Logout</a></li>
+                  {%else%}
+                  <li id="bodynav"><a href="{% url 'login'%}">Login</a></li>
+                  {% endif %}
+                  <li id="bodynav"><a href="">{{user.username}}</a></li>
+                  <li id="bodynav"><a href="{% url 'books_page'%}">Book Suggestions</a></li>
+                  <li id="bodynav"><a href="{% url 'display_reviews'%}">Reviews</a></li>
+                  
+
+                </ul>
+              </nav>
+</body>
+</html>

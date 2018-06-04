@@ -6,31 +6,39 @@
 <link rel="stylesheet" href="#">
 {% endblock %}
 {% block content %}
+{% include 'greennav.html' %}
 
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <h3>{{review.title}}</h3>
+            <h3 style="color:#85aa2c; text-transform: uppercase;">{{review.title}}</h3>
+            <hr>
             <p>{{review.Review}}</p>
-            <h3>Add comment</h3>
+           
             <form id="endpoint-url-div" action="{% url 'comment' review.id %}" method='post'>
                     {% csrf_token %}
                 {%for field in form %}
-                {{field.label_tag}}
                 {%bootstrap_field field %}
                 
                 <input type="submit">
                 <br>
                 </form>
+                <br>
+                <br>
                 {%endfor%}
-                <h5>Comments</h5>
-                <hr>
+                <h2>Comments</h2>
                 {% for comment in comments %}
-                <div id="comments">
-                        <p>{{comment.user}}~~{{comment.comment}}</p>
-                        <p>{{comment.time_posted}}</p>
+                <div class="row">
+                    <div class="col-xs-6">
+                            <div id="comments">
+                                        <p>{{comment.user}}~~{{comment.comment}}</p>
+                                        <p>{{comment.time_posted}}</p>
+                                    <hr>
+                                </div>
+                                
+                    </div>
                 </div>
-                
+              
 
                 {% endfor %}
             
